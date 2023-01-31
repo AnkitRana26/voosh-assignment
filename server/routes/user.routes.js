@@ -6,6 +6,9 @@ const { postUser,loginUser } = require('../controllers/user.controllers');
 
 const userRouter = Router();
 
+
+// Route For Adding User
+
 userRouter.post('/add-user',async(req,res)=>{
     try{
 
@@ -21,6 +24,9 @@ userRouter.post('/add-user',async(req,res)=>{
         })
     }
 })
+
+
+//Route for Login User
 
 userRouter.post('/login-user',async(req,res)=>{
 
@@ -41,11 +47,13 @@ userRouter.post('/login-user',async(req,res)=>{
 
 })
 
+
+//Route For Getting User Details By Token;
+
 userRouter.get('/loggedIn/:token',async(req,res)=>{
 
     try{
-        const token = req.params.token
-        console.log(token);
+        const token = req.params.token;
         const userDetails = await checkToken(token);
         res.send({
             data:userDetails

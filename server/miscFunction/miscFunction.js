@@ -31,7 +31,11 @@ const checkToken =async(token)=>{
     
     // Find User
 
-    const user = await userModel.findOne({phone_number:valid.phone_number});
+    const user = await userModel.findOne({'phone_number':valid['phone_number']});
+    if(!user){
+        throw new Error('User Not Found');
+    }
+
     return user;
 }
 

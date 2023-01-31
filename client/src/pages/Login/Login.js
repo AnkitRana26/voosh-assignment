@@ -36,12 +36,17 @@ const Login = () => {
         }
 
         loginUser(body).then((res)=>{
-            localStorage.setItem('token',res.token);
 
-            checkToken(res.token).then((res)=>{
-                setAuth({isAuth:true,userDetails:res.data})
-                navigate('/')
-            }).catch(err=>console.log(err.message))
+            if(res.token){
+                localStorage.setItem('token',res.token);
+                checkToken(res.token).then((res)=>{
+                    setAuth({isAuth:true,userDetails:res.data})
+                    alert(`Welcome Back ${res.data.name}`);
+                    navigate('/')
+                }).catch(err=>console.log(err.message))
+            }else{
+                alert(res.err);
+            }
 
         }).catch((err)=>{
             console.log(err.message);

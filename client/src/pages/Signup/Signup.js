@@ -3,42 +3,47 @@ import { useNavigate } from 'react-router-dom';
 import { Context } from '../../context/Context';
 import { createUser } from '../../utils/api';
 import './Signup.css'
-const initialForm ={
-    name:'',
-    phone_number:'',
-    password:''
+const initialForm = {
+    name: '',
+    phone_number: '',
+    password: ''
 }
 
 const Login = () => {
 
-    const [form,setForm] = useState(initialForm);
-    const {auth,setAuth} = useContext(Context);
+    const [form, setForm] = useState(initialForm);
+    const { auth, setAuth } = useContext(Context);
     const navigate = useNavigate();
 
-    useEffect(()=>{
-        if(auth.isAuth){
+    useEffect(() => {
+        if (auth.isAuth) {
             navigate('/');
         }
-    },[auth])
+    }, [auth])
 
-    const changeHandler =(e)=>{
-        const {name,value} = e.target;
-        setForm({...form,[name]:value});
+    const changeHandler = (e) => {
+        const { name, value } = e.target;
+        setForm({ ...form, [name]: value });
     }
 
-    const signUpHandler=(e)=>{
+    const signUpHandler = (e) => {
         e.preventDefault();
-        
+
         // Post Request for Create User
-        const body ={
+        const body = {
             ...form,
-            phone_number:Number(form.phone_number)
+            phone_number: Number(form.phone_number)
         }
 
-        createUser(body).then((res)=>{
-            console.log(res);  
-        }).catch((err)=>{
-            console.log(err.message);
+        createUser(body).then((res) => {
+            if(res.data){
+                alert('SignUp Sucessfully')
+                navigate('/login')
+            }
+            else{
+                alert(res.err);
+            }
+            
         })
 
         setForm(initialForm);
