@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import { Context } from '../../context/Context'
 import './Home.css'
 const data = [
     {
@@ -60,10 +61,15 @@ const initialForm={
 
 const Home = () => {
     const [form,setForm]= useState(initialForm);
+    const {auth,setAuth} = useContext(Context);
     const changeHandler =(e)=>{
         const {name,value} = e.target;
         setForm({...form,[name]:value});
     }
+
+    
+
+
     return (
         <div id='homeContainer'>
             <h1>Orders DashBoard</h1>
@@ -81,7 +87,7 @@ const Home = () => {
                 <div id='addOrderContainer'>
                     <h2>Add Order</h2>
                     <form id="addOrderForm">
-                        <input class="inputField" type="number" name="sub_total" placeholder="Enter Sub Total" onChange={changeHandler} value={form.sub_total} />
+                        <input className="inputField" type="number" name="sub_total" placeholder="Enter Sub Total" onChange={changeHandler} value={form.sub_total} />
                         <input type="submit" value="Submit" />
                     </form>
                 </div>
