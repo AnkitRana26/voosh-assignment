@@ -1,0 +1,40 @@
+#signUpContainer {
+    width: 33%;
+    margin: auto;
+    margin-top: 2%;
+    box-shadow: rgb(0 0 0 / 20%) 0px 12px 28px 0px, rgb(0 0 0 / 10%) 0px 2px 4px 0px, rgb(255 255 255 / 5%) 0px 0px 0px 1px inset;
+    padding: 25px;
+}
+
+#signUpContainer >h1 {
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+#signUpForm {
+    display: grid;
+}
+
+#signUpForm > input {
+    padding: 3%;
+    margin: 5px;
+    outline: none;
+    border: none;
+}
+.inputField {
+    background-color: #ebebf3;
+    color: black;
+    text-align: center;
+    font-size: 1rem;
+}
+.inputField:focus::placeholder {
+    visibility: hidden;
+}
+
+
+#signUpForm > input[type='submit'] {
+    background-color: #23212a;
+    color: white;
+    font-size: 1rem;
+    margin-top: 3%;
+}
