@@ -1,0 +1,101 @@
+#mainConatiner{
+    display: grid;
+    width: 98%;
+    margin: auto;
+    grid-template-columns: 70% 30%; 
+    position: relative;
+}
+
+#homeContainer >h1{
+    text-align: center;
+    margin-bottom: 3%;
+}
+
+
+
+
+.order{
+    display: grid;
+    text-align: center;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+    box-shadow: rgb(0 0 0 / 20%) 0px 12px 28px 0px, rgb(0 0 0 / 10%) 0px 2px 4px 0px, rgb(255 255 255 / 5%) 0px 0px 0px 1px inset;
+}
+
+.order >h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #23212a;
+    color: white;
+    height: 150px;
+}
+
+.order >h3{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#orderContainer{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+    margin: auto;
+    width: 90%;
+}
+
+#addOrderContainer > h2{
+    text-align: center;
+    margin-bottom: 5%;
+    
+}
+
+#addOrderContainer{
+    box-shadow: rgb(0 0 0 / 20%) 0px 12px 28px 0px, rgb(0 0 0 / 10%) 0px 2px 4px 0px, rgb(255 255 255 / 5%) 0px 0px 0px 1px inset;
+    position: sticky;
+    top: 15px;
+    height: fit-content;
+    padding: 15px;
+}
+
+#loginContainer {
+    width: 33%;
+    margin: auto;
+    margin-top: 2%;
+    box-shadow: rgb(0 0 0 / 20%) 0px 12px 28px 0px, rgb(0 0 0 / 10%) 0px 2px 4px 0px, rgb(255 255 255 / 5%) 0px 0px 0px 1px inset;
+    padding: 25px;
+}
+
+
+
+#addOrderForm {
+    display: grid;
+}
+
+#addOrderForm > input {
+    padding: 3%;
+    margin: 5px;
+    outline: none;
+    border: none;
+}
+.inputField {
+    background-color: #ebebf3;
+    color: black;
+    text-align: center;
+    font-size: 1rem;
+}
+.inputField:focus::placeholder {
+    visibility: hidden;
+}
+
+
+#addOrderForm > input[type='submit'] {
+    background-color: #23212a;
+    color: white;
+    font-size: 1rem;
+    margin-top: 3%;
+}
