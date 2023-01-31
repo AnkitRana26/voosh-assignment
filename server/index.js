@@ -7,8 +7,8 @@ const orderRouter = require('./routes/order.routes');
 
 
 const app = express();
-app.use(cors());
 app.use(express.json());
+app.use(cors());
 app.use(userRouter);
 app.use(orderRouter);
 
